@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 direction)
     {
+
         if(direction != Vector2.zero)
         {
             int count = rb.Cast(
