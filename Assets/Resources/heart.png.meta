@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f7eaa6379fac436b926d177f9889724
+guid: 0d9e3c7ee7176f74aa3ab25157d85c99
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,13 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chest_01_0
+      name: heart_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 300.33334
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e2250bc01e0ce43877b4a602056e70
-      internalID: 539413259
+      spriteID: 119f4efc52ef0f8448002a9574294776
+      internalID: 1398234795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_1
+      name: heart_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 300
         y: 0
-        width: 16
-        height: 16
+        width: 300.33334
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e0a0e1c208c66d4697867522c29a45f
-      internalID: 1307528362
+      spriteID: 8d771c8efc536514d800ab456f898ca4
+      internalID: 683297016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chest_01_2
+      name: heart_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 600
         y: 0
-        width: 16
-        height: 16
+        width: 300.33334
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,29 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f59cb095b9aa833449f927a9026a90eb
-      internalID: 1071882412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chest_01_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 418a0059fdb311d4e9649651c4447528
-      internalID: 1595138753
+      spriteID: 277e54575e9526a4f98237b1333aa3c3
+      internalID: 907104639
       vertices: []
       indices: 
       edges: []
@@ -234,10 +213,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      chest_01_3: 1595138753
-      chest_01_0: 539413259
-      chest_01_2: 1071882412
-      chest_01_1: 1307528362
+      heart_0: 1398234795
+      heart_2: 907104639
+      heart_1: 683297016
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

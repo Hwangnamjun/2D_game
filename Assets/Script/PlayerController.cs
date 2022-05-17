@@ -57,16 +57,15 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isMoving", false);
             }
 
+            var shape = ps.shape;
             if (movementInput.x < 0)
             {
                 spriteRenderer.flipX = true;
-                var shape = ps.shape;
                 shape.position = new Vector3(0.2f,shape.position.y,shape.position.z);
             }
             else if (movementInput.x > 0)
             {
                 spriteRenderer.flipX = false;
-                var shape = ps.shape;
                 shape.position = new Vector3(-0.2f, shape.position.y, shape.position.z);
             }
         }
@@ -124,6 +123,14 @@ public class PlayerController : MonoBehaviour
             swordAttack.AttackRight();
         }
         
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Chest")
+        {
+            Debug.Log("123");
+            other.GetComponent<Animator>().SetTrigger("IsOpen");
+        }
     }
     public void EndSwordAttack()
     {

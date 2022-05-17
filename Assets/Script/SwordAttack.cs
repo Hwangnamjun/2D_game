@@ -28,10 +28,9 @@ public class SwordAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-     if(other.tag == "Enemy")
+    if(other.tag == "Enemy")
         {
             Enemy enemy = other.GetComponent<Enemy>();
-            Debug.Log("in");
             if(enemy != null)
             {
                 enemy.Health -= damage;

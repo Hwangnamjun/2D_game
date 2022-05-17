@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     bool isDelay = false;
     Vector2 vec;
     SpriteRenderer spriteRenderer;
-
+    private int damage;
     public float Health
     {
         set 
@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        damage = 1;
     }
 
     private void FixedUpdate()
@@ -65,7 +66,7 @@ public class Enemy : MonoBehaviour
         isDelay = false;
     }
 
-    private bool TryMove(Vector2 direction)
+    private void TryMove(Vector2 direction)
     {
         if(isDelay)
         {
@@ -90,23 +91,24 @@ public class Enemy : MonoBehaviour
                     {
                         spriteRenderer.flipX = false;
                     }
-
-                    return true;
                 }
                 else
                 {
                     animator.SetBool("isMoving", false);
-                    return false;
                 }
             }
-            else
-            {
-                return false;
-            }
         }
-        else
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
         {
-            return false;
+            PlayerStatus player = other.GetComponent<PlayerStatus>();
+
+            if (player.isDelay == true)
+            {
+                player.Health -= damage;
+            }
         }
     }
 
