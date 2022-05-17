@@ -8,12 +8,14 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
     Rigidbody2D rb;
-    public float moveSpeed = 1f;
+    private float moveSpeed = 0.3f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     CapsuleCollider2D cc;
     bool isDelay = false;
+    Vector2 vec;
+    SpriteRenderer spriteRenderer;
 
     public float Health
     {
@@ -43,6 +45,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -52,12 +55,13 @@ public class Enemy : MonoBehaviour
             isDelay = true;
             StartCoroutine(monsterMove());
         }
+        TryMove(vec);
     }
 
     IEnumerator monsterMove()
     {
         yield return new WaitForSecondsRealtime(3.0f);
-        TryMove(new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2)));
+        vec = new Vector2(UnityEngine.Random.Range(-1, 2), UnityEngine.Random.Range(-1, 2));
         isDelay = false;
     }
 
@@ -77,10 +81,21 @@ public class Enemy : MonoBehaviour
                 {
                     rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
 
+                    animator.SetBool("isMoving", true);
+                    if (direction.x < 0)
+                    {
+                        spriteRenderer.flipX = true;
+                    }
+                    else if (direction.x > 0)
+                    {
+                        spriteRenderer.flipX = false;
+                    }
+
                     return true;
                 }
                 else
                 {
+                    animator.SetBool("isMoving", false);
                     return false;
                 }
             }
