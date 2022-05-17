@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
     bool canMove = true;
+    ParticleSystem ps;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        ps = transform.GetChild(1).GetComponent<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -43,19 +46,28 @@ public class PlayerController : MonoBehaviour
                     }
                 }
                 animator.SetBool("isMoving", success);
+                if(!ps.isPlaying)
+                {
+                    ps.Play();
+                }
             }
             else
             {
+                ps.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
                 animator.SetBool("isMoving", false);
             }
 
             if (movementInput.x < 0)
             {
                 spriteRenderer.flipX = true;
+                var shape = ps.shape;
+                shape.position = new Vector3(0.2f,shape.position.y,shape.position.z);
             }
             else if (movementInput.x > 0)
             {
                 spriteRenderer.flipX = false;
+                var shape = ps.shape;
+                shape.position = new Vector3(-0.2f, shape.position.y, shape.position.z);
             }
         }
     }
@@ -74,7 +86,6 @@ public class PlayerController : MonoBehaviour
             if (count == 0)
             {
                 rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-
                 return true;
             }
             else
@@ -84,6 +95,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+
             return false;
         }
 

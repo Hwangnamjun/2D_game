@@ -1283,7 +1283,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7788125, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -15711,6 +15711,26 @@ PrefabInstance:
       propertyPath: m_DefaultActionMap
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5260535633301159743, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260535633301159743, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: cullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260535633301159743, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260535633301159743, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: ShapeModule.alignToDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260535633301159743, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: InitialModule.randomizeRotationDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5646542215659674265, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
       propertyPath: lengthInSec
       value: 1
@@ -15786,6 +15806,10 @@ PrefabInstance:
     - target: {fileID: 5646542215659674265, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
       propertyPath: RotationModule.separateAxes
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646542215659674265, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 5646542215659674265, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
       propertyPath: UVModule.sprites.Array.size
@@ -16058,6 +16082,10 @@ PrefabInstance:
     - target: {fileID: 7708190591614423258, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380967301605977066, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8941162918043310681, guid: 7763340e34aed4b5ab969d96ac055674, type: 3}
       propertyPath: movementFilter.layerMask.m_Bits
